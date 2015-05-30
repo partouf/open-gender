@@ -1,0 +1,40 @@
+<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<div class="complex-gender">
+    <label for="gender">Gender</label>
+    <select class="complex-gender-select" name="gender" id="gender">
+        <option value="1">Male</option>
+        <option value="2">Female</option>
+        <option value="3">Custom</option>
+    </select>
+
+    <div class="custom-gender-expand">
+        <label for="custom-gender">Custom</label>
+        <input class="complex-gender-custom" name="custom-gender" id="custom-gender" />
+
+        <label for="custom-gender-pronoun">Preferred pronoun</label>
+        <select class="complex-gender-pronoun" name="custom-gender-pronoun" id="custom-gender-pronoun">
+            <option value="1">him</option>
+            <option value="2">her</option>
+            <option value="3">them</option>
+        </select>
+    </div>
+
+    <script language="JavaScript">
+        function hideshow_customgender() {
+            if ($("#gender").val() == 3) {
+                $(".custom-gender-expand").show();
+            } else {
+                $(".custom-gender-expand").hide();
+            }
+        }
+
+        $(document).ready(function() {
+            hideshow_customgender();
+
+            $("#gender").change(function() {
+                hideshow_customgender();
+            });
+        });
+    </script>
+</div>
