@@ -55,9 +55,9 @@ It's a work in progress and there are some proof of concepts.
 
 ## Custom gender suggestions
 
-*should always be able to enter a custom field, but you can suggest these in a lookup*
-*can be fit into Gender field if suggested option is selected*
-*you can modulo 10 these option values to suggest pronoun*
+*Should always be able to enter a custom field, but you can suggest these in a lookup.*
+*Can be fit into Gender field if suggested option is selected.*
+*You can modulo 10 these option values to suggest pronoun.*
 
 11 Trans f2m
 
