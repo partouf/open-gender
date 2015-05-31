@@ -29,11 +29,14 @@ It's a work in progress and there are some proof of concepts.
 
 ### Pronoun
 
-1  he/him
+1 he/him/his
 
-2  she/her
+2 she/her/hers
 
-3  they/them
+3 they/them/their
+
+4 use name only
+
 
 
 ### Titles - Enum
