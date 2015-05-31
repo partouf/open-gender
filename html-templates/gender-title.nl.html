@@ -2,10 +2,9 @@
 
 <select class='titleselect' name='title' id='title'>
     <option value='0'></option>
-    <option value='1'>Mr.</option>
-    <option value='3'>Miss</option>
-    <option value='4'>Mrs.</option>
-    <option value='5'>Mx.</option>
+    <option value='1'>Dhr.</option>
+    <option value='4'>Mevr.</option>
+    <option value='5'>Geen</option>
 </select>
 
 <script language="JavaScript">
@@ -19,20 +18,17 @@
         var namewithoutinitials = lastname;
 
         if (title == 1) {
-            ex_salutation = "Dear Mr. " + namewithoutinitials + ",";
-            ex_address = "Mr. " + namewithinitials;
-        } else if (title == 3) {
-            ex_salutation = "Dear Miss " + namewithoutinitials + ",";
-            ex_address = "Miss " + namewithinitials;
+            ex_salutation = "Geachte heer " + namewithoutinitials + ",";
+            ex_address = "Dhr. " + namewithinitials;
         } else if (title == 4) {
-            ex_salutation = "Dear Mrs. " + namewithoutinitials + ",";
-            ex_address = "Mrs. " + namewithinitials;
+            ex_salutation = "Geachte mevrouw " + namewithoutinitials + ",";
+            ex_address = "Mevr. " + namewithinitials;
         } else if (title == 5) {
-            ex_salutation = "Dear Mx. " + namewithinitials + ",";
-            ex_address = "Mx. " + namewithinitials;
+            ex_salutation = "Geachte " + namewithinitials + ",";
+            ex_address = namewithinitials;
         } else {
             // unknown
-            ex_salutation = "Dear Sir / Madam,";
+            ex_salutation = "Geachte heer of mevrouw " + namewithoutinitials + ",";
             ex_address = namewithinitials;
         }
 
@@ -52,9 +48,9 @@
 <p>&nbsp;</p>
 
 <div class="titleexamples">
-    <label for="example_address">Address example:</label>
+    <label for="example_address">Voorbeeld adressering:</label>
     <span id="example_address"></span>
     <p>&nbsp;</p>
-    <label for="example_salutation">Salutation example:</label>
+    <label for="example_salutation">Voorbeeld aanhef:</label>
     <span id="example_salutation"></span>
 </div>
