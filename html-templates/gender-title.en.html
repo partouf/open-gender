@@ -1,4 +1,6 @@
 <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+<script language="JavaScript" src="../scripts/open-gender-common.js"></script>
+<script language="JavaScript" src="../scripts/open-gender-en.js"></script>
 
 <select class='titleselect' name='title' id='title'>
     <option value='0'></option>
@@ -11,33 +13,11 @@
 <script language="JavaScript">
     function write_example() {
         var title = $("#title").val();
-        var ex_salutation = "", ex_address = "";
-        var lastname = "Jansen";
+        var lastname = "Doe";
         var initials = "J.";
 
-        var namewithinitials = initials + " " + lastname;
-        var namewithoutinitials = lastname;
-
-        if (title == 1) {
-            ex_salutation = "Dear Mr. " + namewithoutinitials + ",";
-            ex_address = "Mr. " + namewithinitials;
-        } else if (title == 3) {
-            ex_salutation = "Dear Miss " + namewithoutinitials + ",";
-            ex_address = "Miss " + namewithinitials;
-        } else if (title == 4) {
-            ex_salutation = "Dear Mrs. " + namewithoutinitials + ",";
-            ex_address = "Mrs. " + namewithinitials;
-        } else if (title == 5) {
-            ex_salutation = "Dear Mx. " + namewithinitials + ",";
-            ex_address = "Mx. " + namewithinitials;
-        } else {
-            // unknown
-            ex_salutation = "Dear Sir / Madam,";
-            ex_address = namewithinitials;
-        }
-
-        $("#example_address").html(ex_address);
-        $("#example_salutation").html(ex_salutation);
+        $("#example_address").html(opengender.titles_address_example(title, lastname, initials));
+        $("#example_salutation").html(opengender.titles_salutation_example(title, lastname, initials));
     }
 
     $(document).ready(function() {
