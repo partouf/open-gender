@@ -6,10 +6,15 @@ This repository is an attempt to make the complexities of gender easier for deve
 It's a work in progress and there are some proof of concepts.
 
 
-## Files
+## Goals
 
-* [html-templates/gender-complex.en.html](html-templates/gender-complex.en.html) this template has similar elements websites like Google and Facebook have, where you can enter a custom text for gender and select a preferred pronoun.
-* [html-templates/gender-title.en.html](html-templates/gender-title.en.html) title selection test
+[x] Standarize enumerations
+
+[ ] Develop drop-in easy-to-use controls to select gender
+
+[ ] Develop helper libraries for various programming languages
+
+[ ] Develop new ways of selecting gender that uses less CIS defaults
 
 
 ## Enums
