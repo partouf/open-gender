@@ -8,13 +8,13 @@ It's a work in progress and there are some proof of concepts.
 
 ## Goals
 
-[x] Standarize enumerations
+- [x] Standarize enumerations
 
-[ ] Develop drop-in easy-to-use controls to select gender
+- [ ] Develop drop-in easy-to-use controls to select gender
 
-[ ] Develop helper libraries for various programming languages
+- [ ] Develop helper libraries for various programming languages
 
-[ ] Develop new ways of selecting gender that uses less CIS defaults
+- [ ] Develop new ways of selecting gender that uses less CIS defaults
 
 
 ## Enums
