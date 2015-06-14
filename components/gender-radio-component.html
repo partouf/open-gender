@@ -1,0 +1,92 @@
+<link rel="import" href="bower_components/polymer/polymer-mini.html"/>
+<dom-module id="gender-radio">
+    <template>
+        <span class="gender-radio-container">
+            <input id="gender-radio-input-male" name="gender-radio-input" value="1" class="radiobox" type="radio"><label for="gender-radio-input-male">Male</label>
+            <input id="gender-radio-input-female" name="gender-radio-input" value="2" class="radiobox" type="radio"><label for="gender-radio-input-female">Female</label>
+            <input id="gender-radio-input-custom" name="gender-radio-input" value="4" class="radiobox last" type="radio" checked="checked"><label for="gender-radio-input-custom">Custom</label>
+            <span class="gender-radio-expand">
+                <input class="gender-radio-custom" id="gender-radio-custom" name="gender-radio-custom" />
+
+                <label for="gender-radio-pronoun">Pronoun</label>
+                <select class="gender-radio-pronoun" id="gender-radio-pronoun" name="gender-radio-pronoun">
+                    <option value="1">him</option>
+                    <option value="2">her</option>
+                    <option value="3">them</option>
+                    <option value="4">by name</option>
+                </select>
+            </span>
+        </span>
+
+        <script language="JavaScript">
+            if (typeof($) === "undefined") {
+                console.log("Please include JQuery before using this component");
+            }
+        </script>
+    </template>
+</dom-module>
+
+<script>
+    Polymer({
+        is: "gender-radio",
+        ready: function() {
+            var $self = $(this);
+
+            $self.find("input[name=gender-radio-input]").change(function () {
+                if ($self.find("input[name=gender-radio-input]:checked").val() == 4) {
+                    $self.find(".gender-radio-expand").show();
+                } else {
+                    $self.find(".gender-radio-expand").hide();
+                }
+
+                $self.attr("input", $self.find("input[name=gender-radio-input]:checked").val());
+            });
+
+            $self.find("#gender-radio-custom").change(function () {
+                $self.attr("custom", $(this).val());
+            });
+
+            $self.find("#gender-radio-pronoun").change(function () {
+                $self.attr("pronoun", $(this).val());
+            });
+
+            $self.find("#gender-radio-custom").val($self.attr("custom"));
+            $self.find("#gender-radio-pronoun").val($self.attr("pronoun"));
+
+            var genderval = $self.attr("input");
+            this.attributeChanged("input", 0, genderval);
+        },
+        input: {
+            value: 0,
+            reflect: true
+        },
+        custom: {
+            value: "",
+            reflect: true
+        },
+        pronoun: {
+            value: 0,
+            reflect: true
+        },
+        attributeChanged: function(attrName, oldVal, newVal) {
+            var $self = $(this);
+
+            if (attrName == "input") {
+                if (newVal == 1) {
+                    $self.find("#gender-radio-input-male").prop("checked", true);
+                    $self.find("#gender-radio-input-male").prop("checked", true);
+                } else if (newVal == 2) {
+                    $self.find("#gender-radio-input-female").prop("checked", true);
+                } else {
+                    $self.find("#gender-radio-input-custom").prop("checked", true);
+                }
+
+                $self.find("input[name=gender-radio-input]").change();
+            } else if (attrName == "custom") {
+                $self.find("#gender-radio-custom").val(newVal);
+            } else if (attrName == "pronoun") {
+                $self.find("#gender-radio-pronoun").val(newVal);
+            }
+        }
+    });
+</script>

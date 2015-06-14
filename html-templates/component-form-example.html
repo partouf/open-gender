@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>
+    </title>
+    <script src="../components/bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+    <link rel="import" href="../components/gender-radio-component.html"/>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<style>
+    div.registration {
+        font-family: Calibri, Helvetica, Arial, sans-serif;
+    }
+    div.line {
+        line-height: 25px;
+    }
+    div.line label {
+        display: inline-block;
+        width: 150px;
+    }
+    div.line gender-radio label {
+        display: inline;
+    }
+</style>
+    <script>
+        $(document).ready(function() {
+           $("#checkvalue").click(function() {
+               console.log("input=" + $("#gender").attr("input"));
+               console.log("custom=" + $("#gender").attr("custom"));
+               console.log("pronoun=" + $("#gender").attr("pronoun"));
+           });
+        });
+    </script>
+    <form method="post">
+        <div class="registration">
+            <div class="line"><label for="username">Username:</label><input id="username" name="username" /></div>
+            <div class="line"><label for="lastname">Last name:</label><input id="lastname" name="lastname" /></div>
+            <div class="line"><label for="firstname">First name:</label><input id="firstname" name="firstname" /></div>
+            <div class="line"><label>Gender:</label><gender-radio id="gender" name="gender" input="4" custom="non-binary" pronoun="4" /></div>
+        </div>
+        <div>
+            <input type="button" id="checkvalue" value="Check Values"/>
+            <input type="submit"/>
+        </div>
+    </form>
+</body>
+</html>
