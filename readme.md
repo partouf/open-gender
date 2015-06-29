@@ -5,6 +5,8 @@ This repository is an attempt to make the complexities of gender easier for deve
 
 It's a work in progress and there are some proof of concepts.
 
+Go to http://partouf.github.io/open-gender for some previews.
+
 
 ## Goals
 
