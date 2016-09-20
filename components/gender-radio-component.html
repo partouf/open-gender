@@ -2,8 +2,8 @@
 <dom-module id="gender-radio">
     <template>
         <span class="gender-radio-container">
-            <input id="gender-radio-input-male" name="gender-radio-input" value="1" class="radiobox" type="radio"><label for="gender-radio-input-male">Male</label>
-            <input id="gender-radio-input-female" name="gender-radio-input" value="2" class="radiobox" type="radio"><label for="gender-radio-input-female">Female</label>
+            <input id="gender-radio-input-man" name="gender-radio-input" value="1" class="radiobox" type="radio"><label for="gender-radio-input-man">Man</label>
+            <input id="gender-radio-input-woman" name="gender-radio-input" value="2" class="radiobox" type="radio"><label for="gender-radio-input-woman">Woman</label>
             <input id="gender-radio-input-custom" name="gender-radio-input" value="4" class="radiobox last" type="radio" checked="checked"><label for="gender-radio-input-custom">Custom</label>
             <span class="gender-radio-expand">
                 <input class="gender-radio-custom" id="gender-radio-custom" name="gender-radio-custom" />
@@ -73,10 +73,9 @@
 
             if (attrName == "input") {
                 if (newVal == 1) {
-                    $self.find("#gender-radio-input-male").prop("checked", true);
-                    $self.find("#gender-radio-input-male").prop("checked", true);
+                    $self.find("#gender-radio-input-man").prop("checked", true);
                 } else if (newVal == 2) {
-                    $self.find("#gender-radio-input-female").prop("checked", true);
+                    $self.find("#gender-radio-input-woman").prop("checked", true);
                 } else {
                     $self.find("#gender-radio-input-custom").prop("checked", true);
                 }

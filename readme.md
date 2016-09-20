@@ -25,9 +25,9 @@ Go to http://partouf.github.io/open-gender for some previews.
 
 0 do not wish to disclose
 
-1 male
+1 man
 
-2 female
+2 woman
 
 3 X (indeterminate gender)
 
