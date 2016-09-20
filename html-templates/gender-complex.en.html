@@ -5,15 +5,15 @@
     <select class="complex-gender-select" name="gender" id="gender">
         <option value="1">Male</option>
         <option value="2">Female</option>
-        <option value="4">Custom</option>
+        <option value="4">Other</option>
     </select>
 
-    <div class="custom-gender-expand">
-        <label for="custom-gender">Custom</label>
-        <input class="complex-gender-custom" name="custom-gender" id="custom-gender" />
+    <div class="other-gender-expand">
+        <label for="other-gender">Other</label>
+        <input class="complex-gender-other" name="other-gender" id="other-gender" />
 
-        <label for="custom-gender-pronoun">Pronoun</label>
-        <select class="complex-gender-pronoun" name="custom-gender-pronoun" id="custom-gender-pronoun">
+        <label for="other-gender-pronoun">Pronoun</label>
+        <select class="complex-gender-pronoun" name="other-gender-pronoun" id="other-gender-pronoun">
             <option value="1">him</option>
             <option value="2">her</option>
             <option value="3">them</option>
@@ -22,19 +22,19 @@
     </div>
 
     <script language="JavaScript">
-        function hideshow_customgender() {
+        function hideshow_othergender() {
             if ($("#gender").val() == 4) {
-                $(".custom-gender-expand").show();
+                $(".other-gender-expand").show();
             } else {
-                $(".custom-gender-expand").hide();
+                $(".other-gender-expand").hide();
             }
         }
 
         $(document).ready(function() {
-            hideshow_customgender();
+            hideshow_othergender();
 
             $("#gender").change(function() {
-                hideshow_customgender();
+                hideshow_othergender();
             });
         });
     </script>

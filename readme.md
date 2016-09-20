@@ -31,7 +31,7 @@ Go to http://partouf.github.io/open-gender for some previews.
 
 3 X (indeterminate gender)
 
-4 custom
+4 other
 
 
 ### Pronoun

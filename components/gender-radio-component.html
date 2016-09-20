@@ -4,9 +4,9 @@
         <span class="gender-radio-container">
             <input id="gender-radio-input-man" name="gender-radio-input" value="1" class="radiobox" type="radio"><label for="gender-radio-input-man">Man</label>
             <input id="gender-radio-input-woman" name="gender-radio-input" value="2" class="radiobox" type="radio"><label for="gender-radio-input-woman">Woman</label>
-            <input id="gender-radio-input-custom" name="gender-radio-input" value="4" class="radiobox last" type="radio" checked="checked"><label for="gender-radio-input-custom">Custom</label>
+            <input id="gender-radio-input-other" name="gender-radio-input" value="4" class="radiobox last" type="radio" checked="checked"><label for="gender-radio-input-other">Other</label>
             <span class="gender-radio-expand">
-                <input class="gender-radio-custom" id="gender-radio-custom" name="gender-radio-custom" />
+                <input class="gender-radio-other" id="gender-radio-other" name="gender-radio-other" />
 
                 <label for="gender-radio-pronoun">Pronoun</label>
                 <select class="gender-radio-pronoun" id="gender-radio-pronoun" name="gender-radio-pronoun">
@@ -42,15 +42,15 @@
                 $self.attr("input", $self.find("input[name=gender-radio-input]:checked").val());
             });
 
-            $self.find("#gender-radio-custom").change(function () {
-                $self.attr("custom", $(this).val());
+            $self.find("#gender-radio-other").change(function () {
+                $self.attr("other", $(this).val());
             });
 
             $self.find("#gender-radio-pronoun").change(function () {
                 $self.attr("pronoun", $(this).val());
             });
 
-            $self.find("#gender-radio-custom").val($self.attr("custom"));
+            $self.find("#gender-radio-other").val($self.attr("other"));
             $self.find("#gender-radio-pronoun").val($self.attr("pronoun"));
 
             var genderval = $self.attr("input");
@@ -77,12 +77,12 @@
                 } else if (newVal == 2) {
                     $self.find("#gender-radio-input-woman").prop("checked", true);
                 } else {
-                    $self.find("#gender-radio-input-custom").prop("checked", true);
+                    $self.find("#gender-radio-input-other").prop("checked", true);
                 }
 
                 $self.find("input[name=gender-radio-input]").change();
-            } else if (attrName == "custom") {
-                $self.find("#gender-radio-custom").val(newVal);
+            } else if (attrName == "other") {
+                $self.find("#gender-radio-other").val(newVal);
             } else if (attrName == "pronoun") {
                 $self.find("#gender-radio-pronoun").val(newVal);
             }
